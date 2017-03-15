@@ -12,7 +12,10 @@ namespace DAL
     public class MyDbContext : DbContext
     {
         public MyDbContext()
-            : base("ConnectionStringName") { }
+            //: base("Data Source=./mydb.db;") { } 
+            : base("ConnectionStringName")
+        {
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
