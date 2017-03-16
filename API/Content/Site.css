@@ -3,15 +3,94 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    text-align: center;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
+
+.main-container {
+    padding: 40px;
+    display: inline-block;
+}
+
+.add-user-container span {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.add-btn {
+    display: inline-block;
+    padding: 6px 20px;
+    background: #5EDF1D;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .add-btn:hover {
+        background: darkgreen;
+    }
+
+.table-container {
+    margin: 25px 0;
+    text-align: left;
+}
+table, tr, th, td {
+    border: 1px solid #000;
+}
+td, th {
+    width: 200px;
+    position: relative;
+    padding: 5px 5px;
+}
+thead {
+    background: #bfbfbf;
+    color: #fff;
+}
+td span {
+    line-height: 30px;
+}
+.del-btn {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #DF321D;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+}
+.del-btn:hover {
+    background: darkred;
+}
+.page-btn {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #1DC4DF;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 6px;
+    border: none;
+}
+.page-btn:hover {
+    background: darkcyan;
+}
+.page-count {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+

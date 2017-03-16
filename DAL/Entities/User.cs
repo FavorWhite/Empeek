@@ -11,7 +11,7 @@ namespace DAL.Entities
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public List<Pet> Phones { get; set; }
+        public List<Pet> Pets { get; set; }
 
         public override string ToString()
         {

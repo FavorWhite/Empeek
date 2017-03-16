@@ -11,18 +11,10 @@ namespace API.Controllers
 {
     public class HomeController : Controller
     {
-        private UnitOfWork uow;
-        
+
         public ActionResult Index()
         {
-            using (uow = new UnitOfWork())
-            {
-                ViewBag.Title = "Home Page";
-                uow.Users.Create(new User { Id = 1, Name = "Favor" });
-                uow.Save();
-
-            }
-
+            ViewBag.Title = "Home Page";
             return View();
         }
     }

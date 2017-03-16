@@ -11,6 +11,15 @@ namespace API
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-route.js",
+                        "~/Scripts/Module/Module.js",
+                        "~/Scripts/Service/userService.js",
+                        "~/Scripts/Service/petService.js",
+                        "~/Scripts/Controller/petController.js",
+                        "~/Scripts/Controller/userController.js"));
+
             // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
             // используйте средство построения на сайте http://modernizr.com, чтобы выбрать только нужные тесты.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(

@@ -18,6 +18,9 @@ namespace API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            AppDomain.CurrentDomain.SetData("DataDirectory", path);
         }
     }
 }

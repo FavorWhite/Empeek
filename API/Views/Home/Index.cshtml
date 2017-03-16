@@ -1,24 +1,42 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="main-container" ng-controller="userController">
+    
+    <div class="add-user-container">
+        <span>Name</span>
+        <input type="text" id="ename" required="" ng-model="Name">
+        <div class="add-btn" ng-click="add()">Add</div>
+
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+
+    <div>{{Message}}</div>
+    <div class="table-container">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Pets Count</th>
+            </tr>
+            </thead>
+            @*ng-repeat="user in Users"*@
+            <tbody  ng-repeat="user in Users | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+            <tr>
+                <td> <span>{{user.Name}}</span></td>
+                <td> <span>{{user.Pets.length}}</span> <div class="del-btn" ng-click="delete(user.Id)">Delete</div></td>
+            </tr>
+            </tbody>
+        </table>
+
+        
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="page-btn">
+        Previous
+    </button>
+    <div class="page-count">{{currentPage+1}}/{{numberOfPages()}}</div>
+    <button ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1" class="page-btn">
+        Next
+    </button>
 </div>
