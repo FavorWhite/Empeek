@@ -11,14 +11,21 @@ app.service('petService', function ($http) {
         });
         return request;
     }
-    //Get Single Records
-    this.get = function (PetId) {
-        return $http.get("/api/Pets/" + PetId);
-    }
+    ////Get Single Records
+    //this.get = function (PetId) {
+    //    return $http.get("/api/Pets/" + PetId);
+    //}
 
-    //Get All Pets
-    this.getPets = function () {
-        return $http.get("/api/Pets");
+    //Get All User's Pets
+    this.getPets = function (userId) {
+       // var queryString = "/api/Pets/" + userId;
+      
+        var request = $http({
+            method: "get",
+            url: "/api/Pets/" + userId
+
+        });
+        return request;
     }
 
 

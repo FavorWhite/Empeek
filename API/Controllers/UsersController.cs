@@ -19,10 +19,10 @@ namespace API.Controllers
         private MyDbContext db = new MyDbContext();
 
         // GET: api/Users
-        public IEnumerable<User> GetUsers()
+        public IQueryable<User> GetUsers()
         {
-            List<User> Users = db.Users.ToList();
-            return Users;
+            return db.Users;
+
         }
 
         // GET: api/Users/5

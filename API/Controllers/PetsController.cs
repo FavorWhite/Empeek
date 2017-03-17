@@ -18,22 +18,18 @@ namespace API.Controllers
         private MyDbContext db = new MyDbContext();
 
         // GET: api/Pets
-        public IQueryable<Pet> GetPets()
-        {
-            return db.Pets;
-        }
+        //public IQueryable<Pet> GetPets()
+        //{
+        //    return db.Pets;
+        //}
 
         // GET: api/Pets/5
-        [ResponseType(typeof(Pet))]
-        public IHttpActionResult GetPet(int id)
+        [ResponseType(typeof(IEnumerable<Pet>))]
+        public IEnumerable<Pet> GetPet(int id)
         {
-            Pet pet = db.Pets.Find(id);
-            if (pet == null)
-            {
-                return NotFound();
-            }
+            //List <Pet> Pets = db.Users.Find(id).Pets.ToList();
 
-            return Ok(pet);
+            return db.Pets.Where(p=>p.UserId== id);
         }
 
         //// PUT: api/Pets/5

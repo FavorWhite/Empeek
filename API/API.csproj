@@ -194,8 +194,11 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Controller\petController.js" />
-    <Content Include="Scripts\Controller\userController.js" />
+    <Content Include="Scripts\Filter\pageFilter.js" />
+    <Content Include="Scripts\Module\routeModule.js" />
+    <Content Include="Scripts\Pets\petController.js" />
+    <Content Include="Scripts\Pets\pets.html" />
+    <Content Include="Scripts\Users\userController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -941,12 +944,13 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <Content Include="Scripts\Module\Module.js" />
+    <Content Include="Scripts\Module\crudModule.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\Service\petService.js" />
-    <Content Include="Scripts\Service\userService.js" />
+    <Content Include="Scripts\Pets\petService.js" />
+    <Content Include="Scripts\Users\users.html" />
+    <Content Include="Scripts\Users\userService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

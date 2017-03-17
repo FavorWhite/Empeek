@@ -1,0 +1,39 @@
+﻿
+
+
+<div class="main-container" ng-controller="userController">
+    <h2>All Users</h2>
+    <div class="add-user-container" >
+        <input type="text" name="name"  placeholder="Enter Pet Owner's Name" ng-model="Name">
+        <div class="add-btn"  ng-click="add()" >Add</div>
+
+    </div>
+
+
+    <div class="table-container">
+        <div>Total Pets Count: {{PetsCount}}</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Pets Count</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="user in Users | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+                <tr>
+                    <td> <span> <a href="#!/pets/{{user.Id}}">{{user.Name}}</a></span></td>
+                    <td> <span>{{user.Pets.length}}</span> <div class="del-btn" ng-click="delete(user.Id)">Delete</div></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="page-btn">
+        Previous
+    </button>
+    <div class="page-count">{{currentPage+1}}/{{numberOfPages()}}</div>
+    <button ng-disabled="currentPage >= Users.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="page-btn">
+        Next
+    </button>
+</div>

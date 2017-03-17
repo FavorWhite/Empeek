@@ -1,0 +1,41 @@
+﻿
+
+<div class="main-container" ng-controller="petController">
+
+    <h2>{{UserName}}'s Pets</h2>
+    <a href="#!/users" class="back-to-users-link">Back to all Users</a>
+
+    <div class="add-user-container">
+        <input type="text" id="ename"  placeholder="Enter Pet's Name" ng-model="Name">
+        <div class="add-btn" ng-click="add()">Add</div>
+
+    </div>
+   
+
+    <div class="table-container">
+        <div>Total Pets Count: {{PetsCount}}</div>
+        <table class="pet-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="pet in Pets | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+            <tr>
+                <td> <span> {{pet.Name}}</span> <div class="del-btn" ng-click="delete(pet.Id)">Delete</div></td>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="page-btn">
+        Previous
+    </button>
+    <div class="page-count">{{currentPage+1}}/{{numberOfPages()}}</div>
+    {{getData().length}}
+    <button ng-disabled="currentPage >=Pets.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="page-btn">
+        Next
+    </button>
+</div>

@@ -9,10 +9,9 @@
     padding-right: 15px;
     text-align: center;
 }
-input,
-select,
-textarea {
-    max-width: 280px;
+
+input, select, textarea {
+    width: 330px;
 }
 
 .main-container {
@@ -43,24 +42,35 @@ textarea {
     }
 
 .table-container {
-    margin: 25px 0;
+    margin: 15px 0;
     text-align: left;
+    padding-top: 10px;
+    border-top: 1px solid #000;
 }
+
 table, tr, th, td {
     border: 1px solid #000;
 }
+
+.pet-table td, .pet-table th {
+    width: 400px;
+}
+
 td, th {
     width: 200px;
     position: relative;
     padding: 5px 5px;
 }
+
 thead {
     background: #bfbfbf;
     color: #fff;
 }
+
 td span {
     line-height: 30px;
 }
+
 .del-btn {
     display: inline-block;
     padding: 4px 14px;
@@ -72,9 +82,11 @@ td span {
     cursor: pointer;
     float: right;
 }
-.del-btn:hover {
-    background: darkred;
-}
+
+    .del-btn:hover {
+        background: darkred;
+    }
+
 .page-btn {
     display: inline-block;
     padding: 4px 14px;
@@ -85,12 +97,17 @@ td span {
     border-radius: 6px;
     border: none;
 }
-.page-btn:hover {
-    background: darkcyan;
-}
+
+    .page-btn:hover {
+        background: darkcyan;
+    }
+
 .page-count {
     display: inline-block;
     margin: 0 15px;
 }
 
-
+.back-to-users-link {
+    text-decoration: underline;
+    font-weight: 600;
+}

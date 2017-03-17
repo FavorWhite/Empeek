@@ -14,11 +14,13 @@ namespace API
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-route.js",
-                        "~/Scripts/Module/Module.js",
-                        "~/Scripts/Service/userService.js",
-                        "~/Scripts/Service/petService.js",
-                        "~/Scripts/Controller/petController.js",
-                        "~/Scripts/Controller/userController.js"));
+                        "~/Scripts/Module/crudModule.js",
+                        "~/Scripts/Module/routeModule.js",
+                        "~/Scripts/Users/userService.js",
+                        "~/Scripts/Pets/petService.js",
+                        "~/Scripts/Pets/petController.js",
+                        "~/Scripts/Users/userController.js",
+                        "~/Scripts/Filter/pageFilter.js"));
 
             // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
             // используйте средство построения на сайте http://modernizr.com, чтобы выбрать только нужные тесты.
